@@ -85,6 +85,20 @@
       animation: fadeInUp 0.8s ease backwards;
     }
 
+    /* immagini decorative nelle card */
+    .card-img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      animation: pulseImg 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseImg {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
     .card:nth-child(1) { animation-delay: 0.2s; }
     .card:nth-child(2) { animation-delay: 0.4s; }
     .card:nth-child(3) { animation-delay: 0.6s; }
@@ -205,47 +219,86 @@
         padding: 30px;
       }
     }
+
+    /* cuori flottanti di sfondo */
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -2;
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 1.8em;
+      color: #ff6171;
+      animation: rise 8s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-900px) scale(0.5);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
+      <!-- piccolo banner animato/immagine decorativa -->
+      <img src="https://source.unsplash.com/800x200/?father,child" alt="Papà e figlio" style="width:100%;border-radius:20px;margin-bottom:20px;animation:fadeInDown 1s ease;">
       <h1>✨ Dediche Speciali per Te, Papà ✨</h1>
       <p>Con amore, riconoscenza e rispetto infinito</p>
     </div>
 
     <div class="cards-grid">
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?strength" alt="Forza" />
         <div class="card-icon">💪</div>
         <h2>La Tua Forza</h2>
         <p><strong>Papà,</strong> sei la roccia su cui mi appoggio quando tutto crolla. La tua forza silenziosa mi ha insegnato che le vere battaglie si combattono con coraggio tranquillo, non con grida. Grazie per avermi mostrato come resistere.</p>
       </div>
 
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?home" alt="Casa" />
         <div class="card-icon">🏠</div>
         <h2>Casa Sicura</h2>
         <p><strong>Grazie</strong> per aver creato uno spazio sicuro dove potevo crescere, sbagliare e imparare. Ogni volta che torno a casa, sento quel calore che solo tu sai dare. Sei il fondamento di tutto ciò che sono.</p>
       </div>
 
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?book,learning" alt="Lezioni" />
         <div class="card-icon">📖</div>
         <h2>Le Tue Lezioni</h2>
         <p><strong>Non con le parole,</strong> ma con il tuo esempio mi hai insegnato cosa significa essere responsabile, onesto e gentile. Ogni gesto tuo è stata una lezione che porto con me. Sei il mio maestro di vita.</p>
       </div>
 
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?star" alt="Luce" />
         <div class="card-icon">🌟</div>
         <h2>La Mia Luce</h2>
         <p><strong>Nei momenti bui,</strong> sei stato la mia stella. Quando tutto mi sembrava impossibile, il tuo supporto mi ha fatto credere di nuovo. Sei la prova che qualcuno crede veramente in me, incondizionatamente.</p>
       </div>
 
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?love,heart" alt="Amore" />
         <div class="card-icon">❤️</div>
         <h2>Oltre le Parole</h2>
         <p><strong>Ti voglio bene</strong> più di quanto le parole possano esprimere. Forse non te lo dico abbastanza, ma voglio che tu sappia: sei tutto per me. Il tuo amore è il dono più prezioso che ho ricevuto nella vita.</p>
       </div>
 
       <div class="card">
+        <img class="card-img" src="https://source.unsplash.com/400x200/?gift" alt="Dono" />
         <div class="card-icon">🎁</div>
         <h2>Un Dono Raro</h2>
         <p><strong>In un mondo complesso,</strong> tu sei la semplicità costruttiva. In un tempo di superficialità, sei la profondità. Essere tuo figlio è il privilegio più grande. Ti ringrazio per tutto ciò che fai e quella che sei.</p>
@@ -255,6 +308,14 @@
     <div class="footer-message">
       <p>💙 "Papà, sei il mio eroe silenzioso. Ogni giorno cerco di essere la persona che tu vedi in me." 💙</p>
     </div>
+  </div>
+  <!-- cuori decorativi in movimento -->
+  <div class="floating-hearts">
+    <span class="floating-heart" style="left:10%; animation-delay:0s;">❤️</span>
+    <span class="floating-heart" style="left:25%; animation-delay:2s;">❤️</span>
+    <span class="floating-heart" style="left:40%; animation-delay:4s;">❤️</span>
+    <span class="floating-heart" style="left:60%; animation-delay:1s;">❤️</span>
+    <span class="floating-heart" style="left:80%; animation-delay:3s;">❤️</span>
   </div>
 </body>
 </html>
